@@ -1,9 +1,14 @@
 class StaticPagesController < ApplicationController
   def home
     puts "home呼びます"
-    @demo="homeへ行け"
+    @test1="なんやねん"
+    @test2="なんぞ"
   end
 
   def help
   end
+
+  def about
+  end
+
 end

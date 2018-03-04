@@ -5,12 +5,26 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if Lt IE 9]>
+    <scriipt src="http:..html5shiv/googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
 
   <body>
-    <h1>Title <%= yield(:h1) %></h1>
+    <header class="navbar navbar-fixed-top navbar-inverse"
+      <div class="container">
+        <%= link_to "samplle app", '#', id: "logo" %><!--ここ何？？？-->
+        <nav><!--ここ何？？？-->
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",    '#' %></li>
+            <li><%= link_to "Help",    '#' %></li>
+            <li><%= link_to "Sign in", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
     <%= yield %>
-なんでしょう
+    <div>
   </body>
-
 </html>

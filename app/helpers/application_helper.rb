@@ -7,6 +7,7 @@ module ApplicationHelper
       "#{page_title} | #{base_title}"
     end
     def bootstrap_class_for(flash_type)
+<<<<<<< HEAD
        case flash_type
          when :success
            "alert-success"
@@ -19,5 +20,19 @@ module ApplicationHelper
          else
            flash_type.to_s
        end
+=======
+      case flash_type
+        when :success
+          "alert-success"
+        when :error
+          "alert-danger"
+        when :alert
+          "alert-warning"
+        when :notice
+          "alert-info"
+        else
+          flash_type.to_s
+      end
+>>>>>>> origin/master_miyashita
   end
 end

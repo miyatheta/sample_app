@@ -6,7 +6,8 @@ module ApplicationHelper
     else
       "#{page_title} | #{base_title}"
     end
-    def bootstrap_class_for(flash_type)
+  end
+  def bootstrap_class_for(flash_type)
        case flash_type
          when :success
            "alert-success"

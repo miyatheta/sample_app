@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :users, only: [:show]
+
   #get 'static_pages/home'
   root 'static_pages#home'
   #match '/help', to: 'static_pages#help', via: 'get'

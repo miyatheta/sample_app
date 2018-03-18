@@ -1,12 +1,12 @@
 SampleApp::Application.routes.draw do
-  get 'users/show'
 
   devise_for :users, :controllers => {
     :registrations => "registrations"
   }
-  resources :users, only: [:show, :index]
+  resources :users, only: [:show, :index, :destroy]
   root 'static_pages#home'
 
+  get 'users/show'
   get '/help', to: 'static_pages#help', as: 'help_us'
   get '/about', to: 'static_pages#about', as: 'jikoshoukai'
   get '/contact' => 'static_pages#contact'

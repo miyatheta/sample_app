@@ -1,5 +1,6 @@
 class MicropostsController < ActiveRecord::database
   before_action :authenticate_user!
+  before_action :correst_user, only: :destroy
 
   def create
     @micropost = current_user.microposts.build(micropost_params)
@@ -7,18 +8,23 @@ class MicropostsController < ActiveRecord::database
       flash[:success] = "Micropost created!"
       redirect_to root_url
     else
+      @feed_items = []
       render 'static_pages/home'
     end
   end
 
   def destroy
+    @micropost.destroy
+    redirect_to root_url
   end
-end
 
-private
+  private
 
   def micropost_params
     params.require(:micropost).permit(:content)
   end
 
-end
+  def correct_user
+    @micropost = current_user.microposts.find_by(id: params[:id])
+    redirect_to root_url if @micropost.nil?
+  end

@@ -9,6 +9,7 @@ SampleApp::Application.routes.draw do
     end
   end
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   root 'static_pages#home'
 
   get 'users/show'
